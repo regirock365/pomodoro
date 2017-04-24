@@ -1,0 +1,9 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "a personal pomodoro timer",
+  "main": "server.js",
+  "repository": "https://regirock07@bitbucket.org/regirock07/pomodoro.git",
+  "author": "Hemedi Saidi <shemedi99@gmail.com>",
+  "license": "MIT"
+}
