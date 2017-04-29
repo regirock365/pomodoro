@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "a personal pomodoro timer",
   "main": "server.js",
-  "repository": "https://regirock07@bitbucket.org/regirock07/pomodoro.git",
+  "repository": {
+    "type": "git",
+    "url": "https://regirock07@bitbucket.org/regirock07/pomodoro.git"
+  },
   "author": "Hemedi Saidi <shemedi99@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "express": "^4.15.2"
+  }
 }

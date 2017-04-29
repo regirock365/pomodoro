@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: calibri, sans-serif;
+  background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  /*
+  for pomodoro circle
+  plus a shadow
+  */
+  min-height: 100vh;
+}
+
+header {
+  height: 50px;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#settings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: skyblue;
+  text-align: center;
+}
+
+#settings > div {
+  height: 50px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 500px;
+}
+
+#circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: yellow;
+
+  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  box-shadow: 0px 0px 5px 0px;
+
+  transition: all 0.6s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle:hover {
+  box-shadow: 0px 0px 20px 0px;
+  cursor: pointer;
+}
+
+#circle:active {
+  transition: 0.1s ease;
+  box-shadow: 0px 0px 10px 0px;
+}
+
+#time-left {
+  font-size: 500%;
+}

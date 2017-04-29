@@ -1,0 +1,49 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "modules": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+        "indent": [ "error", 2, { "SwitchCase": 1 } ],
+        "linebreak-style": [ "off", "windows" ],
+        "max-len": [ "error", {
+          "code": 80,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }],
+        "no-alert": "off",
+        "no-cond-assign": [ "error", "always" ],
+        "no-console": ["off", {
+          "allow": ["info", "warn", "error"]
+        }],
+        "no-debugger": "error",
+        "no-dupe-args": "error",
+        "no-dupe-keys": "error",
+        "no-duplicate-case": "error",
+        "no-var": "error",
+        "prefer-const": [ "error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+          }],
+        "quotes": [ "error", "double" ],
+        "semi": [ "warn", "never" ]
+    }
+}
