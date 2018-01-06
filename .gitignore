@@ -44,3 +44,7 @@ jspm_packages
 
 # build files - no conflict with git checkout
 public/style/main.css
+
+# mac files
+**/.DS_Store
+sendgrid.env
