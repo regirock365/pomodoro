@@ -11,13 +11,28 @@
       <!-- <header>
         Pomodoro Timer
       </header> -->
-      <div class="item-a">1</div>
-      <div class="item-b">2</div>
-      <div class="item-c">3</div>
-      <div class="item-d">4</div>
-      <div class="item-e">5</div>
-      <div class="item-f">6</div>
-      <div class="item-g">7</div>
+      <header id="title" class="center">
+        <h1>Pomodoro Timer</h1>
+      </header>
+      <div id="session">
+        <label for="">Session Length</label>
+        <input id="session-length" type="number" value="25" min="1" step="1">
+      </div>
+      <div id="break">
+        <label for="">Break Length</label>
+        <input id="rest-length" type="number" value="5" min="1" step="1">
+      </div>
+      <div id="settings" class="center">
+        <h2>Settings</h2>
+      </div>
+      <main id="pomodoro" class="center">
+        <div id="circle" class="center">
+          <span id="time-left">00:00</span>
+        </div>
+      </main>
+      <div id="footer" class="center">
+        <span>time is of the essence</span>
+      </div>
     </div>
     <!-- <header>
       <h1>Pomodoro Timer</h1>
