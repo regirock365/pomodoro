@@ -1,3 +1,5 @@
+/* global Vue */
+
 // const DOM = {
 //   session: document.getElementById("session-length"),
 //   rest: document.getElementById("rest-length"),
@@ -43,3 +45,77 @@
 //     clearInterval(interval)
 //   }
 // }
+
+const title = document.querySelector("title")
+let permission = false
+Notification.requestPermission().then(r => {
+  if (r !== "denied" && r !== "default") {
+    permission = true
+  }
+})
+
+const timer = new Vue({
+  el: "#timer",
+  data: {
+    work: 25,
+    rest: 5,
+    working: false,
+    paused: false,
+    minutes: "00",
+    seconds: "00",
+    interval: null
+  },
+  computed: {
+    endTime: function() {
+      const sessionTime = this.working ? this.work : this.rest
+      const minute = 1000 * 60
+      return Date.now() + minute * sessionTime
+    },
+    pauseDisplay: function() {
+      return this.paused ? "PLAY" : "PAUSE"
+    }
+  },
+  methods: {
+    toggleWorking: function() {
+      if (!this.paused) {
+        this.working = !this.working
+        clearInterval(this.interval)
+        this.interval = setInterval(this.intervalFunction, 1000)
+      } else {
+        alert("cannot toggle while paused")
+      }
+    },
+    togglePaused: function() {
+      this.paused = !this.paused
+
+      clearInterval(this.interval)
+    },
+    intervalFunction: function() {
+      const timeRemaining = Math.round((this.endTime - Date.now()) / 1000)
+      const minutesRemaining = this.formatTime(Math.floor(timeRemaining / 60))
+      const secondsRemaining = this.formatTime(timeRemaining % 60)
+      this.minutes = minutesRemaining
+      this.seconds = secondsRemaining
+      console.log(minutesRemaining, secondsRemaining)
+      title.innerHTML = `${minutesRemaining}:${secondsRemaining}`
+      if (Date.now() > this.endTime) {
+        if (permission) {
+          new Notification("ç'est finit", {
+            body: `Your ${this.working ? "work" : "break"} session is over`
+          })
+        } else {
+          alert("you are finished")
+        }
+        clearInterval(this.interval)
+        this.toggleWorking()
+      }
+    },
+    formatTime: function(time) {
+      if (time < 10) {
+        return `0${time}`
+      } else {
+        return String(time)
+      }
+    }
+  }
+})

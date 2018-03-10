@@ -59,6 +59,12 @@ input {
 #settings {
   grid-area: settings;
 }
+[name="play"] {
+  /* width: 50px; */
+  /* height: 50px; */
+  border-radius: 5px;
+  font-size: 2rem;
+}
 
 #pomodoro {
   grid-area: pomodoro;
@@ -78,6 +84,17 @@ input {
   );
   box-shadow: 0px 0px 5px 0px;
   transition: all 0.6s ease;
+}
+#circle.pulse {
+  animation: 0.5s linear 0s infinite alternate pulse;
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 #circle.session {
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);

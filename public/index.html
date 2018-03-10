@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div class="grid">
+    <div id="timer" class="grid">
       <!-- <header>
         Pomodoro Timer
       </header> -->
       <header id="title" class="center">
         <h1>Pomodoro Timer</h1>
       </header>
-      <div id="session">
+      <div id="work">
         <label for="">Session Length</label>
-        <input id="session-length" type="number" value="25" min="1" step="1">
+        <input id="work-length" type="number" v-model="work" min="1" step="1">
       </div>
-      <div id="break">
+      <div id="rest">
         <label for="">Break Length</label>
-        <input id="rest-length" type="number" value="5" min="1" step="1">
+        <input id="rest-length" type="number" v-model="rest" min="1" step="1">
       </div>
       <div id="settings" class="center">
-        <h2>Settings</h2>
+        <!-- <h2>Settings</h2> -->
+        <button type="button" name="play" v-on:click="togglePaused">{{ pauseDisplay }}</button>
       </div>
       <main id="pomodoro" class="center">
-        <div id="circle" class="center">
-          <span id="time-left">00:00</span>
+        <div id="circle" class="center" v-on:click="toggleWorking" :class="{ pulse: working }">
+          <span id="time-left">{{ minutes }}:{{ seconds }}</span>
         </div>
       </main>
       <div id="footer" class="center">
@@ -40,7 +41,7 @@
     <section id="settings">
       <div class="">
         <label for="">Session Length</label>
-        <input id="session-length" type="number" value="25" min="1" step="1">
+        <input id="work-length" type="number" value="25" min="1" step="1">
       </div>
       <div class="">
         <label for="">Break Length</label>
@@ -54,6 +55,7 @@
       </div>
     </main> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
