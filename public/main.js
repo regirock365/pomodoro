@@ -47,6 +47,7 @@
 // }
 
 const title = document.querySelector("title")
+const audio = new Audio("sna.wav")
 let permission = false
 Notification.requestPermission().then(r => {
   if (r !== "denied" && r !== "default") {
@@ -99,12 +100,13 @@ const timer = new Vue({
       console.log(minutesRemaining, secondsRemaining)
       title.innerHTML = `${minutesRemaining}:${secondsRemaining}`
       if (Date.now() > this.endTime) {
+        audio.play()
         if (permission) {
           new Notification("ç'est finit", {
             body: `Your ${this.working ? "work" : "break"} session is over`
           })
         } else {
-          alert("you are finished")
+          // alert("you are finished")
         }
         clearInterval(this.interval)
         this.toggleWorking()
