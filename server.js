@@ -7,5 +7,5 @@ app.use(express.static(`${__dirname}/public`))
 
 app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public")))
 
-const port = process.env.PORT || 80
+const port = process.env.PORT || 70
 app.listen(port, process.env.IP, () => console.info(`Listening: ${port}`))
