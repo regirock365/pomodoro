@@ -5,7 +5,8 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://regirock07@bitbucket.org/regirock07/pomodoro.git"
+    "url": "https://regirock07@bitbucket.org/regirock07/pomodoro.git",
+    "start": "node server"
   },
   "author": "Hemedi Saidi <shemedi99@gmail.com>",
   "license": "MIT",
