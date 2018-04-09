@@ -1,2 +1,3 @@
 # pomodoro
-A pomodoro timer for personal user
+
+A pomodoro timer for personal use
