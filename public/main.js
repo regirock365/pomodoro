@@ -97,7 +97,6 @@ const timer = new Vue({
       const secondsRemaining = this.formatTime(timeRemaining % 60)
       this.minutes = minutesRemaining
       this.seconds = secondsRemaining
-      console.log(minutesRemaining, secondsRemaining)
       title.innerHTML = `${minutesRemaining}:${secondsRemaining}`
       if (Date.now() > this.endTime) {
         audio.play()
