@@ -26,14 +26,21 @@
         <!-- <h2>Settings</h2> -->
         <button type="button" name="play" v-on:click="togglePaused">{{ pauseDisplay }}</button>
       </div>
+      <div id="work-end-time" class="center">
+        <!-- <label for="appt-time">Choose an appointment time: </label>
+        <input id="appt-time" type="time"> -->
+      </div>
+      <div id="rest-end-time" class="center">
+        <span>time is of the essence</span>
+      </div>
+      <div id="blah" class="center">
+        <span>time is of the essence</span>
+      </div>
       <main id="pomodoro" class="center">
         <div id="circle" class="center" v-on:click="toggleWorking" :class="{ pulse: working }">
           <span id="time-left">{{ minutes }}:{{ seconds }}</span>
         </div>
       </main>
-      <div id="footer" class="center">
-        <span>time is of the essence</span>
-      </div>
     </div>
     <!-- <header>
       <h1>Pomodoro Timer</h1>

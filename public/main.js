@@ -55,7 +55,7 @@ Notification.requestPermission().then(r => {
   }
 })
 
-const timer = new Vue({
+/*const timer = */ new Vue({
   el: "#timer",
   data: {
     work: 25,
